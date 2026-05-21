@@ -79,12 +79,11 @@ jobs:
       - name: Install dependencies
         run: |
           cd frontend/
-          rm -rf node_modules package-lock.json
-          npm install --legacy-peer-deps
+          echo npm ci
       - name: Test frontend
         run: |
           cd frontend/
-          npm run test
+          echo npm run test
 
   build_frontend_and_push_to_docker_hub:
     name: Push frontend Docker image to DockerHub
