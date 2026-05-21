@@ -7,6 +7,7 @@ on:
 
 jobs:
   tests:
+    name: Backend tests
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -78,7 +79,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd frontend/
-          npm install
+          npm install --legacy-peer-deps
           npm ci
       - name: Test frontend
         run: |
