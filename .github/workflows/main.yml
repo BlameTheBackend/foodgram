@@ -65,10 +65,12 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/foodgram_backend:latest
 
   frontend_tests:
+    name: Frontend tests
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out the repo
+        uses: actions/checkout@v3
       - name: Set up NodeJS
         uses: actions/setup-node@v3
         with:
