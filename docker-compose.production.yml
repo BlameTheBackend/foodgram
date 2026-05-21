@@ -31,7 +31,7 @@ services:
       - static:/frontend_static/
 
   nginx:
-    image: alexzzzz05/foodgram_gateway
+    image: alexzzzz05/foodgram_nginx
     env_file: .env
     restart: unless-stopped
     volumes:
