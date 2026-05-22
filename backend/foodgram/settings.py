@@ -13,8 +13,7 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 AUTH_USER_MODEL = 'users.User'
 
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'yandexfoodgram.duckdns.org']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 
 INSTALLED_APPS = [

@@ -33,7 +33,7 @@ services:
     build: ./nginx/
     env_file: .env
     ports:
-      - 8100:80
+      - 8000:80
     volumes:
       - static:/static
       - media:/media
