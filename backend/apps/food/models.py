@@ -17,12 +17,12 @@ class Tag(models.Model):
     name = models.CharField(
         max_length=MAX_CHARS_TAG_NAME,
         unique=True,
-        verbose_name='Уникальное название'
+        verbose_name='Название'
     )
     slug = models.SlugField(
         max_length=MAX_CHARS_TAG_SLUG,
         unique=True,
-        verbose_name='Уникальный слаг'
+        verbose_name='Слаг'
     )
 
     class Meta:
@@ -36,7 +36,7 @@ class Tag(models.Model):
 class Ingredient(models.Model):
     name = models.CharField(
         max_length=MAX_CHARS_NAME_INGREDIENT,
-        verbose_name='Название ингредиента')
+        verbose_name='Название')
     measurement_unit = models.CharField(
         max_length=MAX_CHARS_MEASURE_UNIT,
         verbose_name='Единица измерения'
@@ -99,13 +99,13 @@ class IngredientInRecipe(models.Model):
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
-        related_name='recipe_ingredients',
+        related_name='ingredients',
         verbose_name='Рецепт'
     )
     ingredient = models.ForeignKey(
         Ingredient,
         on_delete=models.CASCADE,
-        related_name='recipe_ingredients',
+        related_name='ingredients',
         verbose_name='Ингредиент'
     )
     amount = models.PositiveIntegerField(
