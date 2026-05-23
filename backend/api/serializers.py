@@ -216,6 +216,7 @@ class RecipeReadSerializer(serializers.ModelSerializer):
     def get_is_in_shopping_cart(self, obj):
         return self.check_user_recipe_relation(ShoppingCart, obj)
 
+
 class IngredientInRecipeWriteSerializer(serializers.Serializer):
     id = serializers.PrimaryKeyRelatedField(
         queryset=Ingredient.objects.all(),
